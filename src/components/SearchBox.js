@@ -47,6 +47,12 @@ const SearchBox = () => {
         setSearchParams({ search: label });
     }, [setSearchParams]);
 
+    const handleKeyPress = useCallback((event) => {
+        if(event.code === 'Enter' && event.target.value) {
+            setSearchParams({search: event.target.value})
+        }
+    }, [setSearchParams])
+
     return (
         <SelectBoxWrapper>
             <Select
@@ -56,6 +62,7 @@ const SearchBox = () => {
                 placeholder={`Search Stocks`}
                 value={selectedOption}
                 isLoading={loading}
+                onKeyDown={handleKeyPress}
             />
         </SelectBoxWrapper>
     );

@@ -50,7 +50,7 @@ const StockOverView = () => {
                         }
                     });
 
-                    if (!data.Note && Object.keys(data).length > 0) {
+                    if (!data.Note && !data.Information && Object.keys(data).length > 0) {
                         setDataFound(true)
                         setCache({ ...cache, [selectedStockSymbol]: values })
                     } else {
