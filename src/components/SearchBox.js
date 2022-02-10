@@ -49,6 +49,7 @@ const SearchBox = () => {
 
     const handleKeyPress = useCallback((event) => {
         if(event.code === 'Enter' && event.target.value) {
+            clearTimeout(searchDebounce);
             setSearchParams({search: event.target.value})
         }
     }, [setSearchParams])
