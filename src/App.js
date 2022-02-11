@@ -10,6 +10,7 @@ function App() {
     <AppProvider>
       <BrowserRouter>
         <Routes>
+          {/* TODO: use react lazy for route level chunking or component level */}
           <Route
             path="/stock-finder"
             element={
